@@ -1,26 +1,14 @@
 -- Create a keyspace
-CREATE KEYSPACE IF NOT EXISTS keyspaceboottech
+CREATE KEYSPACE IF NOT EXISTS test
     WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 }
     AND DURABLE_WRITES = true;
 
-USE keyspaceboottech;
+USE test;
 
 
 -- Create a tables
 
-CREATE TABLE IF NOT EXISTS author(
-                       id uuid PRIMARY KEY,
-                       lastname text,
-                       firstname text
-);
-
-CREATE TABLE IF NOT EXISTS book(
-                     id uuid PRIMARY KEY,
-                     title text,
-                     isbn text,
-                     description text,
-                     language text,
-                     publication date,
-                     page int,
-                     price double
+CREATE TABLE IF NOT EXISTS product(
+    id int PRIMARY KEY,
+    title text
 );
